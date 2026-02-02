@@ -44,4 +44,17 @@ void main() {
       ),
     );
   });
+
+  test('shows all negative numbers in exception message', () {
+    final calc = StringCalculator();
+
+    expect(
+      () => calc.add('-1,-2,3'),
+      throwsA(
+        predicate(
+          (e) => e.toString().contains('negative numbers not allowed -1,-2'),
+        ),
+      ),
+    );
+  });
 }
