@@ -21,4 +21,9 @@ void main() {
     final calc = StringCalculator();
     expect(calc.add('1,2,3,4'), 10);
   });
+
+  test('numbers separated by new line and comma', () {
+    final calc = StringCalculator();
+    expect(calc.add('1\n2,3'), 6);
+  });
 }
