@@ -2,11 +2,13 @@ class StringCalculator {
   int add(String numbers) {
     if (numbers.isEmpty) return 0;
 
-    if (!numbers.contains(',')) {
-      return int.parse(numbers);
+    final parts = numbers.split(',');
+
+    int sum = 0;
+    for (final p in parts) {
+      sum += int.parse(p);
     }
 
-    final parts = numbers.split(',');
-    return int.parse(parts[0]) + int.parse(parts[1]);
+    return sum;
   }
 }
